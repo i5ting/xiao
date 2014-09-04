@@ -17,7 +17,7 @@
 cc.animate = cc.Animate.create;
 
 var OFFSET_X = 4,
-    OFFSET_Y = 32,
+    OFFSET_Y = 52,//月饼位置y轴
     ROW = COL = 9,
     BLOCK_W = 32,
     BLOCK_H = 36,

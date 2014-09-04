@@ -18,9 +18,10 @@
 ## issue
 
 - [x] 多了个头
-- [ ] loading
+- [x] logo
 - [ ] 成功显示的步数
-- [ ] loading去掉
+- [x] loading去掉
+- [ ] 统计点击次数
 
 
 ## resources
