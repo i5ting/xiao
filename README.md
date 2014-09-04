@@ -27,3 +27,5 @@
 ## resources
 
 - [如何自定义 Cocos2d-HTML5 Loading 界面](http://www.tairan.com/archives/4972)
+- [cocos js api](http://www.cocos2d-x.org/reference/html5-js/V3.0rc3/index.html)
+- [Getting_Started_Cocos2d_JS](http://www.cocos2d-x.org/wiki/Getting_Started_Cocos2d-JS)
