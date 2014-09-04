@@ -9,6 +9,22 @@
 	export ANT_ROOT=/Users/shiren1118/java/javaee/apache-ant-1.9.4/bin
 	cocos compile -p web -m release
 	
+执行结果
+
+	➜  xiao git:(master) cocos compile -p web -m release
+	Running command: compile
+	Building mode: release
+	running: '/Users/shiren1118/java/javaee/apache-ant-1.9.4/bin/ant -f /Users/shiren1118/Workspace/game/xiao/publish/html5/build.xml'
+
+	Buildfile: /Users/shiren1118/Workspace/game/xiao/publish/html5/build.xml
+
+	compile:
+	   [jscomp] Compiling 71 file(s) with 42 extern(s)
+		   [jscomp] 0 error(s), 0 warning(s)
+
+	BUILD SUCCESSFUL
+	Total time: 17 seconds
+	➜  xiao git:(master) ✗
 	
 ## test
 
