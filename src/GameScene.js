@@ -384,7 +384,7 @@ var ResultUI = cc.Layer.extend({
             var w = this.winPanel.width, h = this.winPanel.height;
 						// alert(step + ' - ' + percent);
 						// alert(w);
-            var shulabel = new cc.LabelTTF(""+22+"", "宋体", 22);
+            var shulabel = new cc.LabelTTF(""+step+"", "宋体", 22);
             shulabel.x = w/2 - 60;
             shulabel.y = h/4+45;
             shulabel.textAlign = cc.LabelTTF.TEXT_ALIGNMENT_CENTER;
@@ -519,7 +519,7 @@ var GameScene = cc.Scene.extend({
         this.addChild(logo);
 				
         layers.winUI = new ResultUI(true);
-        layers.loseUI = new ResultUI(true);
+        layers.loseUI = new ResultUI(false);
         layers.shareUI = new ShareUI();
     }
 });
