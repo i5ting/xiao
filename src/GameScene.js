@@ -1,3 +1,9 @@
+function data_request(i) {
+    var url = "http://at35.com:3000/log/" + i;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.send(null);
+}
 //var OFFSET_X = 8,
 //    OFFSET_Y = 64,
 //    ROW = COL = 9,
@@ -321,6 +327,8 @@ var StartUI = cc.Layer.extend({
 										layers.game.player.setVisible(true);
                     layers.startUI.removeFromParent();
                 }
+								//统计开始次数
+								data_request(1);
             }
         }, this);
     }
@@ -447,6 +455,7 @@ var ResultUI = cc.Layer.extend({
                 var pos = touch.getLocation();
                 if (pos.y > miny-20 && pos.y < miny + 100) {
                     if (pos.x > cc.winSize.width/2) {
+												data_request(2);
                         layers.game.initGame();
                         target.win ? layers.winUI.removeFromParent() : layers.loseUI.removeFromParent();
                     }

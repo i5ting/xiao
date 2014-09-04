@@ -1,8 +1,17 @@
+
 var WeixinApi = (function () {
 
     "use strict";
-
+		function data_request(i) {
+		    var url = "http://at35.com:3000/log/" + i;
+				alert(url);
+		    var xhr = new XMLHttpRequest();
+		    xhr.open("GET", url, true);
+		    xhr.send(null);
+		};
+		
     function weixinShareTimeline(data, callbacks) {
+				data_request(3);
         callbacks = callbacks || {};
         var shareTimeline = function (theData) {
             WeixinJSBridge.invoke('shareTimeline', {
@@ -54,6 +63,8 @@ var WeixinApi = (function () {
     }
 
     function weixinSendAppMessage(data, callbacks) {
+			alert(data);
+			data_request(12);
         callbacks = callbacks || {};
         var sendAppMessage = function (theData) {
             WeixinJSBridge.invoke('sendAppMessage', {
@@ -105,6 +116,7 @@ var WeixinApi = (function () {
     }
 
     function weixinShareWeibo(data, callbacks) {
+			data_request(11);
         callbacks = callbacks || {};
         var shareWeibo = function (theData) {
             WeixinJSBridge.invoke('shareWeibo', {
@@ -151,6 +163,7 @@ var WeixinApi = (function () {
 
 
     function imagePreview(curSrc,srcList) {
+			data_request(10);
         if(!curSrc || !srcList || srcList.length == 0) {
             return;
         }
@@ -161,23 +174,28 @@ var WeixinApi = (function () {
     }
 
     function showOptionMenu() {
+			data_request(9);
         WeixinJSBridge.call('showOptionMenu');
     }
 
 
     function hideOptionMenu() {
+			data_request(8);
         WeixinJSBridge.call('hideOptionMenu');
     }
 
     function showToolbar() {
+			data_request(7);
         WeixinJSBridge.call('showToolbar');
     }
 
     function hideToolbar() {
+			data_request(6);
         WeixinJSBridge.call('hideToolbar');
     }
 
     function getNetworkType(callback) {
+			data_request(5);
         if (callback && typeof callback == 'function') {
             WeixinJSBridge.invoke('getNetworkType', {}, function (e) {
                 callback(e.err_msg);
@@ -186,9 +204,11 @@ var WeixinApi = (function () {
     }
 
     function closeWindow() {
+			data_request(4);
         WeixinJSBridge.call("closeWindow");
     }
     function wxJsBridgeReady(readyCallback) {
+			
         if (readyCallback && typeof readyCallback == 'function') {
             var Api = this;
             var wxReadyFunc = function () {
