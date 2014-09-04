@@ -415,7 +415,7 @@ var ResultUI = cc.Layer.extend({
 						
             this.winPanel.addChild(dabailabel);
 						
-            var zhufulabel = new cc.LabelTTF("\n\n海航旅游祝您中秋快乐!", "宋体", 20);
+            var zhufulabel = new cc.LabelTTF("\n\n海航旅游祝你中秋快乐!", "宋体", 20);
             zhufulabel.x = w/2;
             zhufulabel.y = h/4 + 5;
             zhufulabel.textAlign = cc.LabelTTF.TEXT_ALIGNMENT_CENTER;
@@ -515,7 +515,10 @@ var GameScene = cc.Scene.extend({
 				
         var logo = new cc.Sprite(res.logo);
         logo.x = cc.winSize.width/2;
-        logo.y = 20;
+        logo.y = 30;
+				logo.scale = .90;
+
+				
         this.addChild(logo);
 				
         layers.winUI = new ResultUI(true);
