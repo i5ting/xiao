@@ -382,14 +382,47 @@ var ResultUI = cc.Layer.extend({
             this.winPanel.removeAllChildren();
 
             var w = this.winPanel.width, h = this.winPanel.height;
-            // var label = new cc.LabelTTF("继续刷屏！\n"+step+"步推倒我的小羊驼\n打败"+percent+"%朋友圈的人！\n你能超过我吗？", "宋体", 20);
-//             label.x = w/2;
-//             label.y = h/4;
-//             label.textAlign = cc.LabelTTF.TEXT_ALIGNMENT_CENTER;
-//             //label.boundingWidth = w;
-//             label.width = w;
-//             label.color = cc.color(0, 0, 0);
-//             this.winPanel.addChild(label);
+						// alert(step + ' - ' + percent);
+						// alert(w);
+            var shulabel = new cc.LabelTTF(""+22+"", "宋体", 22);
+            shulabel.x = w/2 - 60;
+            shulabel.y = h/4+45;
+            shulabel.textAlign = cc.LabelTTF.TEXT_ALIGNMENT_CENTER;
+            //label.boundingWidth = w;
+            shulabel.width = w;
+            shulabel.color = cc.color(253, 167, 2);
+						
+            this.winPanel.addChild(shulabel);
+						
+						
+            var nvshenlabel = new cc.LabelTTF("步追到女神", "宋体", 18);
+            nvshenlabel.x = w/2;
+            nvshenlabel.y = h/4+45;
+            nvshenlabel.textAlign = cc.LabelTTF.TEXT_ALIGNMENT_CENTER;
+            //label.boundingWidth = w;
+            nvshenlabel.width = w;
+            nvshenlabel.color = cc.color(0, 0, 0);
+						
+            this.winPanel.addChild(nvshenlabel);
+						
+            var dabailabel = new cc.LabelTTF("打败朋友圈"+percent+"%的人", "宋体", 18);
+            dabailabel.x = w/2;
+            dabailabel.y = h/4 +20;
+            dabailabel.textAlign = cc.LabelTTF.TEXT_ALIGNMENT_CENTER;
+            //label.boundingWidth = w;
+            dabailabel.width = w;
+            dabailabel.color = cc.color(0, 0, 0);
+						
+            this.winPanel.addChild(dabailabel);
+						
+            var zhufulabel = new cc.LabelTTF("\n\n海航旅游祝您中秋快乐!", "宋体", 20);
+            zhufulabel.x = w/2;
+            zhufulabel.y = h/4 + 5;
+            zhufulabel.textAlign = cc.LabelTTF.TEXT_ALIGNMENT_CENTER;
+            //label.boundingWidth = w;
+            zhufulabel.width = w;
+            zhufulabel.color = cc.color(0, 0, 0);
+						this.winPanel.addChild(zhufulabel);
         }
         else {
             this.losePanel.removeAllChildren();
@@ -486,7 +519,7 @@ var GameScene = cc.Scene.extend({
         this.addChild(logo);
 				
         layers.winUI = new ResultUI(true);
-        layers.loseUI = new ResultUI(false);
+        layers.loseUI = new ResultUI(true);
         layers.shareUI = new ShareUI();
     }
 });
