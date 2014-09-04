@@ -105,6 +105,7 @@ var GameLayer = cc.Layer.extend({
                     width : BLOCK_W,
                     height : BLOCK_H
                 });
+								
                 this.batch.addChild(block);
             }
             odd = !odd;
