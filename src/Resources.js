@@ -1,4 +1,5 @@
 var res = {
+		logo : "res/logo.png",
     bg : "res/background.jpg",
     block : "res/block.png",
     player : "res/player.png",

@@ -473,13 +473,18 @@ var GameScene = cc.Scene.extend({
             y : cc.winSize.height/2
         });
         this.addChild(bg);
-
+				
         layers.game = new GameLayer();
         this.addChild(layers.game);
 
         layers.startUI = new StartUI();
         this.addChild(layers.startUI);
-
+				
+        var logo = new cc.Sprite(res.logo);
+        logo.x = cc.winSize.width/2;
+        logo.y = 20;
+        this.addChild(logo);
+				
         layers.winUI = new ResultUI(true);
         layers.loseUI = new ResultUI(false);
         layers.shareUI = new ShareUI();

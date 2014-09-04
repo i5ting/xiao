@@ -21,3 +21,8 @@
 - [ ] loading
 - [ ] 成功显示的步数
 - [ ] loading去掉
+
+
+## resources
+
+- [如何自定义 Cocos2d-HTML5 Loading 界面](http://www.tairan.com/archives/4972)
