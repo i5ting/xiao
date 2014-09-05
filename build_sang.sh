@@ -5,16 +5,16 @@ cocos compile -p web -m release
 
 cp -f WeixinApi.js publish/html5
 
-rm -rf publish/html5.zip
+rm -rf publish/html5sang.zip
 
 cd publish
 
-zip -r html5.zip html5 
+zip -r html5sang.zip html5 
 
-ssh sang@at35.com rm -rf /home/sang/html5 /home/sang/html5.zip
+ssh sang@at35.com rm -rf /home/sang/html5 /home/sang/html5sang.zip
 
-scp html5.zip sang@at35.com:~
+scp html5sang.zip sang@at35.com:~
 
-ssh sang@at35.com unzip /home/sang/html5.zip
+ssh sang@at35.com unzip /home/sang/html5sang.zip
 
 cd ..
