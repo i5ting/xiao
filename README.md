@@ -45,3 +45,29 @@
 - [如何自定义 Cocos2d-HTML5 Loading 界面](http://www.tairan.com/archives/4972)
 - [cocos js api](http://www.cocos2d-x.org/reference/html5-js/V3.0rc3/index.html)
 - [Getting_Started_Cocos2d_JS](http://www.cocos2d-x.org/wiki/Getting_Started_Cocos2d-JS)
+
+## ha
+
+sudo sysctl -w net.ipv4.ip_nonlocal_bind=1
+
+sudo sysctl -w net.ipv4.ip_forward=1
+
+
+
+worker_processes 1; 
+events { 
+	worker_connections 1024; 
+} 
+http{ 
+	upstream myproject { 
+		server 127.0.0.1:9090; 
+		server 127.0.0.1:9091; 
+	} 
+	server { 
+		listen 8000; 
+		location / { 
+		proxy_pass http://myproject; 
+	} 
+} 
+} 
+
