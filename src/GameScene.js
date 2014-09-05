@@ -200,7 +200,7 @@ var GameLayer = cc.Layer.extend({
     },
 
     randomBlocks : function() {
-        var nb = Math.round(cc.random0To1() * 13) + 27, r, c;
+        var nb = Math.round(cc.random0To1() * 13) + 47, r, c;
         for (var i = 0; i < nb; i++) {
             r = Math.floor(cc.random0To1() * 9);
             c = Math.floor(cc.random0To1() * 9);

@@ -46,28 +46,42 @@
 - [cocos js api](http://www.cocos2d-x.org/reference/html5-js/V3.0rc3/index.html)
 - [Getting_Started_Cocos2d_JS](http://www.cocos2d-x.org/wiki/Getting_Started_Cocos2d-JS)
 
-## ha
+## nginx 负载
 
-sudo sysctl -w net.ipv4.ip_nonlocal_bind=1
-
-sudo sysctl -w net.ipv4.ip_forward=1
-
-
-
-worker_processes 1; 
-events { 
-	worker_connections 1024; 
-} 
-http{ 
-	upstream myproject { 
-		server 127.0.0.1:9090; 
-		server 127.0.0.1:9091; 
+	worker_processes 1; 
+	events { 
+		worker_connections 1024; 
 	} 
-	server { 
-		listen 8000; 
-		location / { 
-		proxy_pass http://myproject; 
+	http{ 
+		upstream backend { 
+			server 127.0.0.1:9090; 
+			server 127.0.0.1:9091; 
+		} 
+		server { 
+			listen 8000; 
+			location / { 
+			proxy_pass http://backend; 
+		} 
 	} 
-} 
-} 
+
+
+其实只要把http里面的丢进去就可以了
+
+需要重载一下nginx
+
+	sudo nginx -s reload
+
+
+## 最简单的移动端统计方法
+
+使用ajax的get请求
+
+	function statistic_request(key) {
+	    var url = "http://at35.com:3000/log/" + key;
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("GET", url, true);
+	    xhr.send(null);
+	}
+	
+参数是key，档服务器接到一次请求，记录一条记录就可以了
 
