@@ -145,7 +145,7 @@ var GameLayer = cc.Layer.extend({
 
         this.player = new cc.Sprite(moving_frames[0]);
         this.addChild(this.player, 10);
-				this.player.setVisible(false);
+				// this.player.setVisible(false);
 
         cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ALL_AT_ONCE,
@@ -518,22 +518,22 @@ var GameScene = cc.Scene.extend({
         this.addChild(bg);
 				
         layers.game = new GameLayer();
-        this.addChild(layers.game);
+        // this.addChild(layers.game);
 
-        layers.startUI = new StartUI();
-        this.addChild(layers.startUI);
+        // layers.startUI = new StartUI();
+   //      this.addChild(layers.startUI);
 				
-        var logo = new cc.Sprite(res.logo);
-        logo.x = cc.winSize.width/2;
-        logo.y = 30;
-				logo.scale = .90;
+   				//      var logo = new cc.Sprite(res.logo);
+				//         logo.x = cc.winSize.width/2;
+				//         logo.y = 30;
+				// logo.scale = .90;
 
 				
-        this.addChild(logo);
+        // this.addChild(logo);
 				
-        layers.winUI = new ResultUI(true);
-        layers.loseUI = new ResultUI(false);
-        layers.shareUI = new ShareUI();
+        // layers.winUI = new ResultUI(true);
+    //     layers.loseUI = new ResultUI(false);
+    //     layers.shareUI = new ShareUI();
     }
 });
 
